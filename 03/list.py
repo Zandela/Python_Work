@@ -97,5 +97,6 @@ print(places)
 places.sort(reverse = True)
 print(places)
 
+# 3-9 晚餐嘉宾
 # len()指出嘉宾人数
 print(len(guests))
