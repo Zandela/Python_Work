@@ -17,7 +17,7 @@ print('Any of these animals would make a great pet!\n')
 # 4-3 数到20
 for value in range(1, 21):
 	print(value)
-print('\n')
+print()
 
 # 4-4 一百万
 '''
@@ -32,26 +32,26 @@ values = [value for value in range(1, 1000001)]
 print(min(values))
 print(max(values))
 print(sum(values))
-print('\n')
+print()
 # 用时0.5s
 
 # 4-6 1～20的奇数
 odds = [odd for odd in range(1, 21, 2)]
 for value in odds:
 	print(value)
-print('\n')
+print()
 
 # 4-7 3～30被3整除的数字
 numbers = [number for number in range(3, 31, 3)]
 for value in numbers:
 	print(value)
-print('\n')
+print()
 
 # 4-7 3～30被3整除的数字
 cubes = [cube ** 3 for cube in range(1, 11)]
 for value in cubes:
 	print(value)
-print('\n')
+print()
 
 # 4-8 切片
 my_foods = ['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream']
@@ -61,7 +61,7 @@ print('Three items form the middle of the list are:')
 print(my_foods[1:4])
 print('The last three items in the list are:')
 print(my_foods[2:])
-print('\n')
+print()
 
 # 4-9 你的比萨和我的比萨
 friend_pizzas = pizzas[:]
@@ -73,3 +73,16 @@ for pizza in pizzas:
 print('\nMy friend\'s favorite pizzas are:')
 for pizza in friend_pizzas:
 	print(pizza)
+# 注意：friend_pizzas = pizzas 行不通，结果会输出相同的列表
+print()
+
+# 4-13 元组
+foods = ('扬州炒饭', '番茄鸡蛋面', '卤肉飯', '清蒸鲈鱼', '紫菜汤')
+for food in foods:
+	print(food)
+# 尝试修改其中一个元素会发生错误
+#foods[0] = '白饭'
+foods = ('扬州炒饭', '番茄鸡蛋面', '紫菜泡饭', '清蒸鲈鱼', '鲫鱼汤')
+print('\n修改后的菜单：')
+for food in foods:
+	print('\t' + food)
