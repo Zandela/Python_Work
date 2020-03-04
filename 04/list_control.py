@@ -53,3 +53,23 @@ for value in cubes:
 	print(value)
 print('\n')
 
+# 4-8 切片
+my_foods = ['pizza', 'falafel', 'carrot cake', 'cannoli', 'ice cream']
+print('The first three items in the list are:')
+print(my_foods[:3])
+print('Three items form the middle of the list are:')
+print(my_foods[1:4])
+print('The last three items in the list are:')
+print(my_foods[2:])
+print('\n')
+
+# 4-9 你的比萨和我的比萨
+friend_pizzas = pizzas[:]
+pizzas.append('assorted sausage pizza')
+friend_pizzas.append('chicken mushroom pizza')
+print('My favorite pizzas are:')
+for pizza in pizzas:
+	print(pizza)
+print('\nMy friend\'s favorite pizzas are:')
+for pizza in friend_pizzas:
+	print(pizza)
