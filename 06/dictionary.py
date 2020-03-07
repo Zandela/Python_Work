@@ -5,8 +5,7 @@
 # 6-1 创建字典-人
 human = {'first_name' : 'Xu', 'last_name' : 'Zeshan', 'age' : 18, 'city' : 'Dongguan'}
 print(human['first_name'])
-print(human)
-print()
+print(human, end = '\n\n')
 
 # 6-2 喜欢的数字
 numbers = {'YangZai' : 7, 'Monkey' : 18, 'WenZhicong' : 8, 'Feason' : 6, 'ZhengBingchun' : 17}
@@ -14,8 +13,7 @@ print('YangZai\'s favorite number is ' + str(numbers['YangZai']))
 print('Monkey\'s favorite number is ' + str(numbers['Monkey']))
 print('WenZhicong\'s favorite number is ' + str(numbers['WenZhicong']))
 print('Feason\'s favorite number is ' + str(numbers['Feason']))
-print('ZhengBingchun\'s favorite number is ' + str(numbers['ZhengBingchun']))
-print()
+print('ZhengBingchun\'s favorite number is ' + str(numbers['ZhengBingchun']), end = '\n\n')
 
 # 6-3 词汇表
 vocabulary = {
@@ -29,8 +27,7 @@ print('字典：' + vocabulary['字典'])
 print('BDFL：' + vocabulary['BDFL'])
 print('EAFP：' + vocabulary['EAFP'])
 print('LBYL：' + vocabulary['LBYL'])
-print('新型类：' + vocabulary['新型类'])
-print()
+print('新型类：' + vocabulary['新型类'], end = '\n\n')
 
 # 6-4 for循环遍历词汇表
 for key, value in vocabulary.items() :
@@ -50,7 +47,98 @@ for key, value in rivers.items() :
 	print('The ' + key.title() + ' runs through ' + value.title() + '.')
 print('All rivers:', end = ' ')
 for river in set(rivers.keys()) :
-	print(river.title(), end = ',')
+	print(river.title(), end = ', ')
 print('\nAll countries:', end = ' ')
 for country in set(rivers.values()) :
-	print(country.title(), end = ',')
+	print(country.title(), end = ', ')
+
+# 6-6 调查
+favorite_languages = {
+	'jen': 'python',
+	'sarah': 'c',
+	'edward': 'ruby',
+	'phil': 'python',
+}
+list_survey = ['jen', 'john', 'neil', 'phil']
+for name in favorite_languages.keys() :
+	if name in list_survey :
+		print(name.title() + ' in the dictionary.')
+	else :
+		print(name.title() + ' come to my survey.')
+print()
+
+# 6-7 嵌套——字典列表
+human_02 = {'first_name' : 'Zhan', 'last_name' : 'Tianyou', 'age' : 108, 'city' : 'Heaven'}
+human_03 = {'first_name' : 'Zhang', 'last_name' : 'Wuji', 'age' : 35, 'city' : 'Song'}
+people = [human, human_02, human_03]
+for i in range(3) :
+	print(people[i])
+print()
+
+# 6-8 宠物
+Andy = {'type' : 'dog', 'host' : 'Yang'}
+Marly = {'type' : 'cat', 'host' : 'Zheng'}
+Xixi = {'type' : 'cat', 'host' : 'Zhan'}
+Honey = {'type' : 'dog', 'host' : 'Deng'}
+pets = [Andy, Marly, Xixi, Honey]
+for i in range(4) :
+	print(pets[i])
+print()
+
+# 6-9 喜欢的地方——字典中存储列表
+place_1 = ['Xiameng', 'Beijing']
+place_2 = ['Yangzhou']
+place_3 = ['Humeng', 'Taiwan', 'Henan']
+favorite_places = {'Yang' : place_1, 'Hu' : place_2, 'Liu' : place_3}
+for name, place in favorite_places.items() :
+	print(name.title() + ' like ', end = '')
+	for i in range(len(place)) :
+		if i < len(place) - 1 :
+			print(place[i], end = ', ')
+		else :
+			print(place[i], end = '.\n')
+print()
+
+# 6-10 喜欢的数字
+numbers_1 = [7, 18]
+numbers_2 = [10, 5, 8]
+numbers_3 = [666, 2, 45]
+numbers_4 = [6]
+numbers_list = {
+	'YangZai' : numbers_1,
+	'Monkey' : numbers_2,
+	'Feason' : numbers_3,
+	'He' : numbers_4
+}
+for name, number in numbers_list.items() :
+	print(name.title() + ' like ', end = '')
+	for i in range(len(number)) :
+		if i < len(number) - 1 :
+			print(number[i], end = ', ')
+		else :
+			print(number[i], end = '.\n')
+print()
+
+# 6-11 城市——字典中存储字典
+cities = {
+	'Dongguan' : {
+		'country' : 'china',
+		'population' : '5000万',
+		'fact' : '沐足'
+	},
+	'GuangZhou' : {
+		'country' : 'china',
+		'population' : '9000万',
+		'fact' : '羊城'
+	},
+	'XiaMeng' : {
+		'country' : 'china',
+		'population' : '7000万',
+		'fact' : '鼓浪屿'
+	}
+}
+for city, details in cities.items() :
+	print(city, end = ': ')
+	for nature, result in details.items() :
+		print(nature + ':' + result, end = ', ')
+	print()
