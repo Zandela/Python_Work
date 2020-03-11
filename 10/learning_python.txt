@@ -1,0 +1,3 @@
+In Python you can develop efficiently.
+In Python you can do data mining.
+In Python you can visualize the data.
