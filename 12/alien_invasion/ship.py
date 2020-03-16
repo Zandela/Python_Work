@@ -15,10 +15,10 @@ class Ship():
 		# 加载飞船图像并获取其外接矩阵
 		self.image = pygame.image.load('images/ship.bmp')
 		self.rect = self.image.get_rect()
-		self.screen_rect = self.get_rect()
+		self.screen_rect = screen.get_rect()
 		
 		# 将每艘新飞船都放在屏幕底部中央
-		self.rect.centerx = self.screen_rect.centrx
+		self.rect.centerx = self.screen_rect.centerx
 		self.rect.bottom = self.screen_rect.bottom
 		
 		# 在飞船的属性center中存储小数值

@@ -24,8 +24,8 @@ def check_keydown_events(event, ai_settings, screen, ship, bullets):
 def fire_bullet(ai_settings, screen, ship, bullets):
 	'''如果还没到达子弹数量限制，就发射一颗子弹'''
 	# 创建一颗子弹，并将其加入到编组bullets中
-	if len(bullets) < ai_settings.bullets_allowed 
-		new_bullet = Bullet(ai.settings, screen, ship)
+	if len(bullets) < ai_settings.bullets_allowed:
+		new_bullet = Bullet(ai_settings, screen, ship)
 		bullets.add(new_bullet)
 				
 def check_keyup_events(event, ai_settings, screen, ship, bullets):
@@ -35,19 +35,17 @@ def check_keyup_events(event, ai_settings, screen, ship, bullets):
 	elif event.key == pygame.K_LEFT:
 		ship.moving_left = False
 			
-def check_event(ai_settings, screen, ship, bullets):
+def check_events(ai_settings, screen, ship, bullets):
 	# 监视响应鼠标和键盘事件：
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			sys.exit()
 			
 		elif event.type == pygame.KEYDOWN:
-			check_keydown_events(event, event, ai_settings, screen, ship, bullets)
+			check_keydown_events(event, ai_settings, screen, ship, bullets)
 			
 		elif event.type == pygame.KEYUP:
-			check_keyup_events(event, event, ai_settings, screen, ship, bullets)
-			
-		elif event.key
+			check_keyup_events(event, ai_settings, screen, ship, bullets)
 
 def update_bullets(bullets):
 	'''更新子弹的位置，并删除已消失的子弹'''
@@ -61,9 +59,9 @@ def update_bullets(bullets):
 
 def get_number_aliens_x(ai_settings, alien_width):
 	'''计算一行可以容纳多少个外星人'''
-		available_space_x = ai_settings.screen_width - 2 * alien_width
-		number_aliens_x = int(available_space_x / (2 * alien_width))		
-		return number_aliens_x
+	available_space_x = ai_settings.screen_width - 2 * alien_width
+	number_aliens_x = int(available_space_x / (2 * alien_width))		
+	return number_aliens_x
 
 def	create_alien(ai_settings, screen, aliens, alien_number):
 	'''创建一个外星人并将其放在当前行'''
@@ -92,7 +90,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
 	
 	# 在飞船和外星人后面重绘所有子弹
 	for bullet in bullets.sprites():
-		bullet.draw_bullet()
+		bullet.draw()
 	ship.blitme()
 	aliens.draw(screen)
 		
