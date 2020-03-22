@@ -1,4 +1,4 @@
-# coding=utf-8
+# -*- coding: utf-8 -*-
 
 # 日期：2020-3-21
 # 作者：YangZai
